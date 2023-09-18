@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1, user-scalable=no">
+    <title>deepmoa - Benchmark</title>
+    <link rel="icon" href="https://deepmoa.github.io/deepmoa.ico">
+    <link rel="stylesheet" href="https://deepmoa.github.io/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="https://deepmoa.github.io/css/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="https://deepmoa.github.io/css/bootstrap-table/bootstrap-table.min.css">
+</head>
+
+<body class="d-flex flex-column h-100">
+<header class="bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="https://deepmoa.github.io/">&nbsp;<i class="fa fa-cogs" aria-hidden="true"></i></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars07" aria-controls="navbars07" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbars07">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://deepmoa.github.io/">&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="https://deepmoa.github.io/benchmark">&nbsp;&nbsp;&nbsp;Benchmark&nbsp;&nbsp;&nbsp;</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://deepmoa.github.io/model">&nbsp;&nbsp;&nbsp;Model&nbsp;&nbsp;&nbsp;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main role="main" class="container flex-shrink-0">
+    <div class="container">
+        <h4 class="pt-4 pb-4 m-0">
+            &nbsp;<i class="fa fa-folder-open" aria-hidden="true"></i>&nbsp;&nbsp;Browse and download benchmark dataset
+        </h4>
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="nav-item"><a class="nav-link text-dark active" href="#download" role="tab" data-toggle="tab">Download</a></li>
+            <li role="presentation" class="nav-item"><a class="nav-link text-dark" href="#train" role="tab" data-toggle="tab">Training</a></li>
+            <li role="presentation" class="nav-item"><a class="nav-link text-dark" href="#valid" role="tab" data-toggle="tab">Validation</a></li>
+            <li role="presentation" class="nav-item"><a class="nav-link text-dark" href="#test" role="tab" data-toggle="tab">Seen test</a></li>
+            <li role="presentation" class="nav-item"><a class="nav-link text-dark" href="#unseen" role="tab" data-toggle="tab">Unseen test</a></li>
+        </ul>
+        <br>
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane card shadow-sm active" id="download">
+                <div class="card-body py-4">
+                    <table class="table table-hover table-bordered">
+                        <thead class="bg-dark text-white">
+                        <tr>
+                            <th>File</th>
+                            <th>Release Date</th>
+                            <th>Download Link</th>
+                        </tr>
+                        </thead>
+                        <tr>
+                            <td>Drug File</td>
+                            <td>January 15 2023</td>
+                            <td><a href="https://deepmoa.github.io/data/benchmark/download/drug.csv">Download</a> (CSV File)</td>
+                        </tr>
+                        <tr>
+                            <td>Microbe File</td>
+                            <td>January 15 2023</td>
+                            <td><a href="https://deepmoa.github.io/data/benchmark/download/microbe.csv">Download</a> (CSV File)</td>
+                        </tr>
+                        <tr>
+                            <td>Target File</td>
+                            <td>January 15 2023</td>
+                            <td><a href="https://deepmoa.github.io/data/benchmark/download/target.csv">Download</a> (CSV File)</td>
+                        </tr>
+                        <tr>
+                            <td>Drug-Microbe File</td>
+                            <td>January 15 2023</td>
+                            <td><a href="https://deepmoa.github.io/data/benchmark/download/drug_microbe.csv">Download</a> (CSV File)</td>
+                        </tr>
+                        <tr>
+                            <td>Drug-Target File</td>
+                            <td>January 15 2023</td>
+                            <td><a href="https://deepmoa.github.io/data/benchmark/download/drug_target.csv">Download</a> (CSV File)</td>
+                        </tr>
+                        <tr>
+                            <td>Drug-Microbe-Target File</td>
+                            <td>January 15 2023</td>
+                            <td><a href="https://deepmoa.github.io/data/benchmark/download/drug_microbe_target.csv">Download</a> (CSV File)</td>
+                        </tr>
+                        <tr>
+                            <td>Training Set File</td>
+                            <td>January 15 2023</td>
+                            <td><a href="https://deepmoa.github.io/data/benchmark/download/training.csv">Download</a> (CSV File)</td>
+                        </tr>
+                        <tr>
+                            <td>Validation Set File</td>
+                            <td>January 15 2023</td>
+                            <td><a href="https://deepmoa.github.io/data/benchmark/download/validation.csv">Download</a> (CSV File)</td>
+                        </tr>
+                        <tr>
+                            <td>Seen Test Set File</td>
+                            <td>January 15 2023</td>
+                            <td><a href="https://deepmoa.github.io/data/benchmark/download/test.csv">Download</a> (CSV File)</td>
+                        </tr>
+                        <tr>
+                            <td>Unseen Test Set File</td>
+                            <td>January 15 2023</td>
+                            <td><a href="https://deepmoa.github.io/data/benchmark/download/unseen.csv">Download</a> (CSV File)</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane card shadow-sm" id="train">
+                <div class="card-body py-4">
+                    <div class="table-responsive">
+                        <table id="table-train"></table>
+                    </div>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane card shadow-sm" id="valid">
+                <div class="card-body py-4">
+                    <div class="table-responsive">
+                        <table id="table-valid"></table>
+                    </div>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane card shadow-sm" id="test">
+                <div class="card-body py-4">
+                    <div class="table-responsive">
+                        <table id="table-test"></table>
+                    </div>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane card shadow-sm" id="unseen">
+                <div class="card-body py-4">
+                    <div class="table-responsive">
+                        <table id="table-unseen"></table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+</main>
+
+<footer class="footer mt-auto py-2 bg-dark">
+    <div class="container">
+        <h5 class="text-white float-left m-1">deepmoa</h5>
+        <div class="float-right">
+            <small class="d-block text-muted mt-2">&copy; 2023&nbsp;&nbsp;&nbsp;<i class="fa fa-bug" aria-hidden="true"></i>&nbsp;Version 1.0</small>
+        </div>
+    </div>
+</footer>
+
+<script src="https://deepmoa.github.io/js/jquery/jquery.min.js"></script>
+<script src="https://deepmoa.github.io/js/popper/popper.min.js"></script>
+<script src="https://deepmoa.github.io/js/bootstrap/bootstrap.min.js"></script>
+<script src="https://deepmoa.github.io/js/bootstrap-table/bootstrap-table.min.js"></script>
+<script src="https://deepmoa.github.io/js/tableExport/tableExport.min.js"></script>
+<script src="https://deepmoa.github.io/js/bootstrap-table/extensions/export/bootstrap-table-export.min.js"></script>
+<script src="https://deepmoa.github.io/js/bootstrap-table/extensions/toolbar/bootstrap-table-toolbar.min.js"></script>
+
+<script>
+    $('#table-train').bootstrapTable({
+        url: 'https://deepmoa.github.io/data/benchmark/train.json',
+        contentType: 'application/x-www-form-urlencoded',
+		method: 'get',
+        maintainMetaData: true,
+        cache: true,
+        striped: true,
+        pagination: true,
+        pageList: [5, 10, 20],
+        sidePagination: 'client',
+        columns: [
+                {
+                    field: 'drug_id',
+                    title: 'DrugBank ID',
+                    sortable:true,
+                }, {
+                    field: 'drug_name',
+                    title: 'Drug Name',
+                    sortable:true,
+                }, {
+                    field: 'microbe_id',
+                    title: 'Microbe ID',
+                    sortable:true,
+                }, {
+                    field: 'microbe_name',
+                    title: 'Microbe Name',
+                    sortable:true,
+                }, {
+                    field: 'target_id',
+                    title: 'Target ID',
+                    sortable:true,
+                }, {
+                    field: 'target_name',
+                    title: 'Target Name',
+                    sortable:true,
+                }
+        ]
+    });
+
+    $('#table-valid').bootstrapTable({
+        url: 'https://deepmoa.github.io/data/benchmark/valid.json',
+        contentType: 'application/x-www-form-urlencoded',
+		method: 'get',
+        maintainMetaData: true,
+        cache: true,
+        striped: true,
+        pagination: true,
+        pageList: [5, 10, 20],
+        sidePagination: 'client',
+        columns: [
+                {
+                    field: 'drug_id',
+                    title: 'DrugBank ID',
+                    sortable:true,
+                }, {
+                    field: 'drug_name',
+                    title: 'Drug Name',
+                    sortable:true,
+                }, {
+                    field: 'microbe_id',
+                    title: 'Microbe ID',
+                    sortable:true,
+                }, {
+                    field: 'microbe_name',
+                    title: 'Microbe Name',
+                    sortable:true,
+                }, {
+                    field: 'target_id',
+                    title: 'Target ID',
+                    sortable:true,
+                }, {
+                    field: 'target_name',
+                    title: 'Target Name',
+                    sortable:true,
+                }
+        ]
+    });
+
+    $('#table-test').bootstrapTable({
+        url: 'https://deepmoa.github.io/data/benchmark/test.json',
+        contentType: 'application/x-www-form-urlencoded',
+		method: 'get',
+        maintainMetaData: true,
+        cache: true,
+        striped: true,
+        pagination: true,
+        pageList: [5, 10, 20],
+        sidePagination: 'client',
+        columns: [
+                {
+                    field: 'drug_id',
+                    title: 'DrugBank ID',
+                    sortable:true,
+                }, {
+                    field: 'drug_name',
+                    title: 'Drug Name',
+                    sortable:true,
+                }, {
+                    field: 'microbe_id',
+                    title: 'Microbe ID',
+                    sortable:true,
+                }, {
+                    field: 'microbe_name',
+                    title: 'Microbe Name',
+                    sortable:true,
+                }, {
+                    field: 'target_id',
+                    title: 'Target ID',
+                    sortable:true,
+                }, {
+                    field: 'target_name',
+                    title: 'Target Name',
+                    sortable:true,
+                }
+        ]
+    });
+
+    $('#table-unseen').bootstrapTable({
+        url: 'https://deepmoa.github.io/data/benchmark/unseen.json',
+        contentType: 'application/x-www-form-urlencoded',
+		method: 'get',
+        maintainMetaData: true,
+        cache: true,
+        striped: true,
+        pagination: true,
+        pageList: [5, 10, 20],
+        sidePagination: 'client',
+        columns: [
+                {
+                    field: 'drug_id',
+                    title: 'DrugBank ID',
+                    sortable:true,
+                }, {
+                    field: 'drug_name',
+                    title: 'Drug Name',
+                    sortable:true,
+                }, {
+                    field: 'microbe_id',
+                    title: 'Microbe ID',
+                    sortable:true,
+                }, {
+                    field: 'microbe_name',
+                    title: 'Microbe Name',
+                    sortable:true,
+                }, {
+                    field: 'target_id',
+                    title: 'Target ID',
+                    sortable:true,
+                }, {
+                    field: 'target_name',
+                    title: 'Target Name',
+                    sortable:true,
+                }
+        ]
+    });
+</script>
+
+</body>
+</html>

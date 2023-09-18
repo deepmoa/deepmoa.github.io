@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1, user-scalable=no">
+    <title>deepmoa - Model</title>
+    <link rel="icon" href="https://deepmoa.github.io/deepmoa.ico">
+    <link rel="stylesheet" href="https://deepmoa.github.io/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="https://deepmoa.github.io/css/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="https://deepmoa.github.io/css/bootstrap-table/bootstrap-table.min.css">
+</head>
+
+<body class="d-flex flex-column h-100">
+<header class="bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="https://deepmoa.github.io/">&nbsp;<i class="fa fa-cogs" aria-hidden="true"></i></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars07" aria-controls="navbars07" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbars07">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://deepmoa.github.io/">&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://deepmoa.github.io/benchmark">&nbsp;&nbsp;&nbsp;Benchmark&nbsp;&nbsp;&nbsp;</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="https://deepmoa.github.io/model">&nbsp;&nbsp;&nbsp;Model&nbsp;&nbsp;&nbsp;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main role="main" class="container flex-shrink-0">
+    <h4 class="pt-4 m-0">
+        &nbsp;<i class="fa fa-tasks" aria-hidden="true"></i>&nbsp;&nbsp;Predict drug-microbe interaction
+    </h4>
+
+
+    <form id="aa">
+        <div class="row m-0 p-0">
+            <div class="col-lg-6 m-0 p-0">
+                <div class="card shadow-sm mt-4 ml-1 mr-1">
+                    <div class="card-header bg-dark text-white">
+                        <i class="fa fa-tags" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<strong>Drug</strong>
+                    </div>
+                    <div class="card-body row justify-content-center">
+						<div class="col-md-10">
+                        <select id="op-d" class="custom-select text-center">
+                            <option selected="selected" value="all">All drugs</option>
+                            <option value="selected">Selected drugs</option>
+                        </select>
+
+                        <div id="s-d" style="display: none;">
+                            <div class="row mt-3">
+                                <div class="col-6 offset-3">
+                                    <button type="button" class="btn btn-outline-dark btn-block" type="button" data-toggle="modal" data-target="#Modal-d">Add</button>
+                                </div>
+                                <div class="col-12 text-center">
+                                    <ul class="list-group mt-3" id="d-l">
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+						
+						</div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 m-0 p-0">
+                <div class="card shadow-sm mt-4 ml-1 mr-1">
+                    <div class="card-header bg-dark text-white">
+                        <i class="fa fa-tags" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<strong>Microbe</strong>
+                    </div>
+                    <div class="card-body row justify-content-center">
+						<div class="col-md-10">
+                        <select id="op-d2" class="custom-select text-center">
+                            <option selected="selected" value="all">All microbes</option>
+                            <option value="selected">Selected microbes</option>
+                        </select>
+
+                        <div id="s-d2" style="display: none;">
+                            <div class="row mt-3">
+                                <div class="col-6 offset-3">
+                                    <button type="button" class="btn btn-outline-dark btn-block" type="button" data-toggle="modal" data-target="#Modal-d2">Add</button>
+                                </div>
+                                <div class="col-12 text-center">
+                                    <ul class="list-group mt-3" id="d-l2">
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+						
+						</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center p-3">
+            <button class="btn btn-dark m-3" type="submit" id="s">Submit</button>
+        </div>
+    </form>
+
+    <div class="modal fade" id="Modal-d" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalLabel">Selelct a drug</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="toolbar-d">
+                        <button id="re-bt-d" class="btn btn-secondary">Reset</button>
+                    </div>
+                    <div class="table-responsive">
+                        <table id="table-d"></table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-dark" data-dismiss="modal" id="ok-d">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="Modal-d2" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalLabel2">Selelct a microbe</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="toolbar-d2">
+                        <button id="re-bt-d2" class="btn btn-secondary">Reset</button>
+                    </div>
+                    <div class="table-responsive">
+                        <table id="table-d2"></table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-dark" data-dismiss="modal" id="ok-d2">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card shadow">
+        <div class="card-header bg-dark text-white">
+            <i class="fa fa-table" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<strong>Results</strong>
+        </div>
+        <div class="card-body">
+            <div id="exptoolbar1">
+                <select id="sel_exp1" class="custom-select">
+                    <option selected="selected" value="selected">Export selected data</option>
+                    <option value="basic">Export data in this page</option>
+                </select>
+            </div>
+            <div class="table-responsive">
+                <table id="table-results"></table>
+            </div>
+            <br>
+        </div>
+    </div>
+    <br>
+</main>
+
+<footer class="footer mt-auto py-2 bg-dark">
+    <div class="container">
+        <h5 class="text-white float-left m-1">deepmoa</h5>
+        <div class="float-right">
+            <small class="d-block text-muted mt-2">&copy; 2023&nbsp;&nbsp;&nbsp;<i class="fa fa-bug" aria-hidden="true"></i>&nbsp;Version 1.0</small>
+        </div>
+    </div>
+</footer>
+
+<script src="https://deepmoa.github.io/js/jquery/jquery.min.js"></script>
+<script src="https://deepmoa.github.io/js/popper/popper.min.js"></script>
+<script src="https://deepmoa.github.io/js/bootstrap/bootstrap.min.js"></script>
+<script src="https://deepmoa.github.io/js/bootstrap-table/bootstrap-table.min.js"></script>
+<script src="https://deepmoa.github.io/js/tableExport/tableExport.min.js"></script>
+<script src="https://deepmoa.github.io/js/bootstrap-table/extensions/export/bootstrap-table-export.min.js"></script>
+<script src="https://deepmoa.github.io/js/bootstrap-table/extensions/toolbar/bootstrap-table-toolbar.min.js"></script>
+
+<script>
+    $('#table-results').bootstrapTable({
+        contentType: 'application/x-www-form-urlencoded',
+        toolbar: '#exptoolbar1',
+        clickToSelect: true,
+        showExport: true,
+        exportDataType: 'selected',
+        cache: true,
+        striped: true,
+        pagination: true,
+        pageList: [5, 10, 20],
+        pageSize: 5,
+        pageNumber: 1,
+        maintainMetaData: true,
+        sidePagination: 'client',
+        columns: [
+            {
+                field: 'state',
+                checkbox: true,
+                align: 'center',
+            },  {
+                field: 'drug',
+                title: 'Drug Name',
+                align: 'center',
+                sortable:true,
+            },  {
+                field: 'microbe',
+                title: 'Microbe name',
+                align: 'center',
+                sortable:true,
+            },  {
+                field: 'probability',
+                title: 'Probability',
+                align: 'center',
+                sortable:false,
+            }
+        ],
+        formatNoMatches: function(){
+            return "No result";
+        },
+    });
+    $("#sel_exp1").change(function () {
+        $('#table-results').bootstrapTable('refreshOptions', {
+            exportDataType: $(this).val()
+        });
+    });
+
+    $('#table-d').bootstrapTable({
+        url: 'https://deepmoa.github.io/data/drug/drug.json',
+        contentType: 'application/x-www-form-urlencoded',
+		method: 'get',
+        toolbar: '#toolbar-d',
+        toolbarAlign: 'right',
+        clickToSelect: true,
+        singleSelect: true,
+        search: true,
+        showSearchButton: true,
+        searchAlign: 'left',
+        maintainMetaData: true,
+        cache: true,
+        striped: true,
+        pagination: true,
+        pageList: [5, 10, 20],
+        sidePagination: 'client',
+        columns: [
+                {
+                    field: 'state',
+                    checkbox: true,
+                    align: 'center',
+                }, {
+                    field: 'drug',
+                    title: 'DrugBank ID',
+                    sortable:true,
+                }, {
+                    field: 'name',
+                    title: 'Drug Name',
+                    sortable:true,
+                }
+        ]
+    });
+
+    $(function(){
+        $("#re-bt-d").click(function(){
+            $("#table-d").bootstrapTable('resetSearch');
+        });
+    });
+
+    var d_name;
+    var d_id;
+    $(function(){
+        $('#table-d').on('check.bs.table check-all.bs.table uncheck.bs.table uncheck-all.bs.table',
+            function (e, rowsAfter, rowsBefore) {
+                var rows = rowsAfter;
+
+                if (e.type === 'uncheck-all') {
+                    rows = rowsBefore;
+                };
+
+                d_name = $.map(!$.isArray(rows) ? [rows] : rows, function (row) {
+                    return row.name;
+                });
+                d_id = $.map(!$.isArray(rows) ? [rows] : rows, function (row) {
+                    return row.idx;
+                });
+            });
+    });
+
+    var sel_d = [-1];
+    var sel_d_dict = {};
+
+    $(function(){
+        $("#ok-d").click(function(){
+            if ($.inArray(d_id[0], sel_d) == -1) {
+                sel_d.push(d_id[0]);
+                sel_d_dict[d_name[0]] = d_id[0];
+                $("#d-l").append("<li class='list-group-item'>" + d_name[0] + "<button type='button' class='close' onclick='delRow_d(this)'><span aria-hidden='true'>&times;</span></button></li>");
+            } else {
+
+            };
+        });
+    });
+
+    $("#op-d").change(function () {
+        if ($(this).val() == 'selected') {
+            $("#s-d").show();
+            sel_d = [];
+            sel_d_dict = {};
+        } else if ($(this).val() == 'all'){
+            $("#s-d").hide();
+            $("#d-l").empty();
+            sel_d = [-1];
+            sel_d_dict = {};
+        };
+    });
+
+    $('#table-d2').bootstrapTable({
+        url: 'https://deepmoa.github.io/data/microbe/microbe.json',
+        contentType: 'application/x-www-form-urlencoded',
+		method: 'get',
+        toolbar: '#toolbar-d',
+        toolbarAlign: 'right',
+        clickToSelect: true,
+        singleSelect: true,
+        search: true,
+        showSearchButton: true,
+        searchAlign: 'left',
+        maintainMetaData: true,
+        cache: true,
+        striped: true,
+        pagination: true,
+        pageList: [5, 10, 20],
+        sidePagination: 'client',
+        columns: [
+                {
+                    field: 'state',
+                    checkbox: true,
+                    align: 'center',
+                }, {
+                    field: 'microbe',
+                    title: 'Taxonomy ID',
+                    sortable:true,
+                }, {
+                    field: 'name',
+                    title: 'Microbe Name',
+                    sortable:true,
+                }
+        ]
+    });
+
+    $(function(){
+        $("#re-bt-d2").click(function(){
+            $("#table-d2").bootstrapTable('resetSearch');
+        });
+    });
+
+    var d_name2;
+    var d_id2;
+    $(function(){
+        $('#table-d2').on('check.bs.table check-all.bs.table uncheck.bs.table uncheck-all.bs.table',
+            function (e, rowsAfter, rowsBefore) {
+                var rows = rowsAfter;
+
+                if (e.type === 'uncheck-all') {
+                    rows = rowsBefore;
+                };
+
+                d_name2 = $.map(!$.isArray(rows) ? [rows] : rows, function (row) {
+                    return row.name;
+                });
+                d_id2 = $.map(!$.isArray(rows) ? [rows] : rows, function (row) {
+                    return row.idx;
+                });
+            });
+    });
+
+    var sel_d2 = [-1];
+    var sel_d_dict2= {};
+
+    $(function(){
+        $("#ok-d2").click(function(){
+            if ($.inArray(d_id2[0], sel_d2) == -1) {
+                sel_d2.push(d_id2[0]);
+                sel_d_dict2[d_name2[0]] = d_id2[0];
+                $("#d-l2").append("<li class='list-group-item'>" + d_name2[0] + "<button type='button' class='close' onclick='delRow_d(this)'><span aria-hidden='true'>&times;</span></button></li>");
+            } else {
+
+            };
+        });
+    });
+
+    $("#op-d2").change(function () {
+        if ($(this).val() == 'selected') {
+            $("#s-d2").show();
+            sel_d2 = [];
+            sel_d_dict2 = {};
+        } else if ($(this).val() == 'all'){
+            $("#s-d2").hide();
+            $("#d-l2").empty();
+            sel_d2 = [-1];
+            sel_d_dict2 = {};
+        };
+    });
+
+    function delRow_d(obj) {
+        rd = $(obj).parent()[0].innerText;
+        rd = rd.slice(0,rd.length-2);
+        sel_d.forEach(function(item, index, arr) {
+            if(item === sel_d_dict[rd]) {
+                arr.splice(index, 1);
+            }
+        });
+        $(obj).parent().remove();
+    };
+
+    var flag_a = 0;
+	var flag_b = 0;
+    var flag_d = 0;
+    var flag_d2 = 0;
+    var alter_s = '';
+	
+    $(function(){
+        $('#s').click(function (e) {
+            e.preventDefault();
+            alter_s = '';
+            if (sel_d.length == 0) {
+                flag_d = 0;
+				alter_s = alter_s + 'Please select at least one drug.\n';
+            } else {
+                flag_d = 1;
+            };
+            if (sel_d2.length == 0) {
+                flag_d2 = 0;
+				alter_s = alter_s + 'Please select at least one microbe.\n';
+            } else {
+                flag_d2 = 1;
+            };
+            if (flag_d == 0 || flag_d2 == 0) {
+                alert(alter_s);
+                alter_s = '';
+            } else {			
+                $('#table-results').bootstrapTable('refreshOptions', {
+								url: 'https://www.deepusp.com/model_dmi/predict',
+								method: 'post',
+                                cache: true,
+                                sidePagination: 'client',
+								queryParams: function (params) {
+									return {
+                                        d: JSON.stringify(sel_d),
+                                        d2: JSON.stringify(sel_d2),
+									}
+								},
+							});
+            };
+			
+        });
+    });
+</script>
+
+</body>
+</html>
